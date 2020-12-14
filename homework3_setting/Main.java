@@ -10,40 +10,52 @@ public class Main {
         StringBuilder logs = new StringBuilder();
         FileWriter forLogs;
 
+
+        File gamesDir = new File("src/main/java/homework3/homework3_setting/Games");
+        gamesDir.mkdirs();
+        new File("src/main/java/homework3/homework3_setting/Games/src").mkdirs();
+        logs.append("Directory src is created");
+        new File("src/main/java/homework3/homework3_setting/Games/src/main").mkdirs();
+        logs.append("\n Directory main is created");
         try {
-            File gamesDir = new File("src/main/java/homework3/homework3_setting/Games");
-            gamesDir.mkdirs();
-            new File("src/main/java/homework3/homework3_setting/Games/src").mkdirs();
-            logs.append("Directory src is created");
-            new File("src/main/java/homework3/homework3_setting/Games/src/main").mkdirs();
-            logs.append("\n Directory main is created");
             new File("src/main/java/homework3/homework3_setting/Games/src/main", "Main.java").createNewFile();
             logs.append("\n File Main is created is created");
+        } catch (IOException e) {
+            logs.append("\n Cannot create file Main");
+            e.printStackTrace();
+        }
+        try {
             new File("src/main/java/homework3/homework3_setting/Games/src/main", "Utils.java").createNewFile();
             logs.append("\n File Utils is created");
-            new File("src/main/java/homework3/homework3_setting/Games/src/main").mkdirs();
-            logs.append("\n Directory main is created");
-            new File("src/main/java/homework3/homework3_setting/Games/src/test").mkdirs();
-            logs.append("\n Directory test is created");
-            new File("src/main/java/homework3/homework3_setting/Games/res").mkdirs();
-            logs.append("\n Directory res is created");
-            new File("src/main/java/homework3/homework3_setting/Games/res/drawables").mkdirs();
-            logs.append("\n Directory drawables is created");
-            new File("src/main/java/homework3/homework3_setting/Games/res/vectors").mkdirs();
-            logs.append("\n Directory vectors is created");
-            new File("src/main/java/homework3/homework3_setting/Games/res/icons").mkdirs();
-            logs.append("\n Directory icons is created");
-            new File("src/main/java/homework3/homework3_setting/Games/savegames").mkdirs();
-            logs.append("\n Directory savegames is created");
-            new File("src/main/java/homework3/homework3_setting/Games/temp").mkdirs();
-            logs.append("\n Directory temp is created");
+        } catch (IOException e) {
+            logs.append("\n Cannot create file Utils");
+            e.printStackTrace();
+        }
+        new File("src/main/java/homework3/homework3_setting/Games/src/main").mkdirs();
+        logs.append("\n Directory main is created");
+        new File("src/main/java/homework3/homework3_setting/Games/src/test").mkdirs();
+        logs.append("\n Directory test is created");
+        new File("src/main/java/homework3/homework3_setting/Games/res").mkdirs();
+        logs.append("\n Directory res is created");
+        new File("src/main/java/homework3/homework3_setting/Games/res/drawables").mkdirs();
+        logs.append("\n Directory drawables is created");
+        new File("src/main/java/homework3/homework3_setting/Games/res/vectors").mkdirs();
+        logs.append("\n Directory vectors is created");
+        new File("src/main/java/homework3/homework3_setting/Games/res/icons").mkdirs();
+        logs.append("\n Directory icons is created");
+        new File("src/main/java/homework3/homework3_setting/Games/savegames").mkdirs();
+        logs.append("\n Directory savegames is created");
+        new File("src/main/java/homework3/homework3_setting/Games/temp").mkdirs();
+        logs.append("\n Directory temp is created");
+        try {
             new FileWriter("src/main/java/homework3/homework3_setting/Games/temp.txt");
             logs.append("\n File temp is created");
         } catch (IOException e) {
+            logs.append("\n Cannot create file temp");
             e.printStackTrace();
         }
 
-        forLogs = new FileWriter("src/main/java/homework3/homework3_setting/Games/temp.txt", false);
+        forLogs = new FileWriter("src/main/java/homework3/homework3_setting/Games/temp.txt", true);
         String stringLogs = logs.toString();
         forLogs.write(stringLogs);
         forLogs.flush();

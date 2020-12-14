@@ -11,3 +11,12 @@ Directory src is created
  Directory savegames is created
  Directory temp is created
  File temp is created
+ player1 is created
+ player2 is created
+ player3 is created
+ progress for player1 is saved
+ progress for player2 is saved
+ progress for player3 is saved
+ data for all players is archived
+ data for all players is unarchived
+ reading data for player1
